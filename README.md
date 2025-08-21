@@ -14,7 +14,7 @@
 ## 執行方式
 
 1. **環境設定**
-   ```
+   ```bash
    git clone https://github.com/eric1236002/2025-NYCU-Edgeai-Final.git
    conda create -n exllama python=3.12
    conda activate exllama
@@ -33,16 +33,14 @@
    - 將 ExLlamaV2 Q4 量化模型放置於 `./llama3.0bpw` 目錄下，或依需求修改 `result.py` 內的 `model_path`。
 
 
-   ```
+   ```bash
    cd 2025-NYCU-Edgeai-Final
    pip install -U huggingface_hub
    huggingface-cli download --resume-download --local-dir ./llama3.0bpw wei123602/exllama-Llama-3.2-3B-Instruct-3.0bpw 
-   
-
    ```
    或是自行量化模型
 
-   ```
+   ```bash
    cd exllamav2
    python convert.py \
        -i  /root/Sherry/EdgeAI/final/1w/llama-3.2-3b-instruct \
@@ -51,7 +49,7 @@
        -b 3.0
    ```
 3. **執行主程式**
-   ```
+   ```bash
    python result.py
    ```
 
